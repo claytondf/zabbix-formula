@@ -190,7 +190,7 @@ ServerActive={{ settings.get('serveractive', defaults.serveractive) }}
 # Default:
 # Hostname=
 {% if not settings.get('hostnameitem', defaults.get('hostnameitem', False)) %}
-Hostname={{ settings.get('hostname', defaults.get('hostname', salt['grains.get']('id'))) }}
+Hostname={{ settings.get('hostname', defaults.get('hostname', salt['grains.get']('host'))) }}
 {% endif %}
 ### Option: HostnameItem
 #	Item used for generating Hostname if it is undefined. Ignored if Hostname is defined.
