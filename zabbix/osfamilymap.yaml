@@ -11,7 +11,7 @@
 # osfamilymap: {}
 ---
 Debian:
-  version_repo: 2.2
+  version_repo: 6.4
   user: zabbix
   group: zabbix
   home: /var/lib/zabbix
@@ -19,7 +19,6 @@ Debian:
   agent:
     pkgs:
       - zabbix-agent
-      - zabbix-sender
     service: zabbix-agent
     config: /etc/zabbix/zabbix_agentd.conf
     pidfile: /var/run/zabbix/zabbix_agentd.pid
@@ -31,6 +30,20 @@ Debian:
       - 127.0.0.1
     includes:
       - /etc/zabbix/zabbix_agentd.d/
+  agent2:
+    pkgs:
+      - zabbix-agent2
+    service: zabbix-agent2
+    config: /etc/zabbix/zabbix_agent2.conf
+    pidfile: /var/run/zabbix/zabbix_agentd.pid
+    logfile: /var/log/zabbix/zabbix_agent2.log
+    logfilesize: '5'
+    server:
+      - 127.0.0.1
+    serveractive:
+      - 127.0.0.1
+    includes2:
+      - /etc/zabbix/zabbix_agent2.d/
   server:
     pkgs:
       - zabbix-server-mysql
