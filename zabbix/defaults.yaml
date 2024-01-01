@@ -16,9 +16,9 @@ zabbix:
     logfile: /var/log/zabbix/zabbix_agentd.log
     logfilesize: '0'
     server:
-      - 127.0.0.1
+      - 172.16.6.92
     serveractive:
-      - 127.0.0.1
+      - 172.16.6.92
     includes:
       - /etc/zabbix/zabbix_agentd.d/
   agent2:
@@ -30,9 +30,9 @@ zabbix:
     logfile: /var/log/zabbix/zabbix_agent2.log
     logfilesize: '5'
     server:
-      - 127.0.0.1
+      - 172.16.6.92
     serveractive:
-      - 127.0.0.1
+      - 172.16.6.92
     includes2:
       - /etc/zabbix/zabbix_agent2.d/
   server:
